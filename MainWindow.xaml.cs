@@ -48,7 +48,7 @@ namespace FreeAdobe
             {
                 if (!productSet.Contains(info.Product + info.Version)) {
                     productSet.Add(info.Product+info.Version);
-                    adobeProductBeans.Add(new AdobeProductBean(info.Product, info.Version, "resources/" + info.ProductName + ".png", info.ProductName + " " + info.Version, "", "https://www.baidu.com",info.LaunchPath));
+                    adobeProductBeans.Add(new AdobeProductBean(info.Product, info.Version, "resources/" + info.ProductName + ".png", info.ProductName + " " + info.Version, "", "https://www.baidu.com",info.RelativeLaunchPath));
                 }
                 
             }
@@ -69,7 +69,7 @@ namespace FreeAdobe
                         "1、前往Adobe官网下载Creative Cloud并安装\n" +
                 "2、通过Creative Cloud下载你想要的应用例如Photoshop（需要登录Adobe ID）\n" +
                 "3、在本软件内找到你下载的版本，点击优化即可使用\n" +
-                "4、注意不要更改Adobe系列软件的安装目录\n\n" +
+                "4、如果更改过安装目录，请在左下角设置内修改安装目录\n\n" +
                 "点击确定按钮去官网下载Creative Cloud", new HelperHandler("help"));
                     helpWindow.Show();
                 }
@@ -170,7 +170,11 @@ namespace FreeAdobe
             helpWindow.Show();
         }
 
-        
+        private void btnSetting_Click(object sender, RoutedEventArgs e)
+        {
+            SettingWindow settingWindow = new SettingWindow();
+            settingWindow.Show();
+        }
 
         class HelperHandler : NotifyEventListener
         {

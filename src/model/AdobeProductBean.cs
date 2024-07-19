@@ -14,13 +14,13 @@ namespace ReFreeAdobe.src.model
         private string name;
         private string desc;
         private string detail;
-        private string launchPath;
+        private string relLaunchPath;
 
         public AdobeProductBean()
         {
         }
 
-        public AdobeProductBean(AdobeProduct product, string version, string icon, string name, string desc, string detail,string launchPath)
+        public AdobeProductBean(AdobeProduct product, string version, string icon, string name, string desc, string detail,string relLaunchPath)
         {
             this.product = product;
             this.version = version;
@@ -28,7 +28,7 @@ namespace ReFreeAdobe.src.model
             this.name = name;
             this.desc = desc;
             this.detail = detail;
-            this.LaunchPath = launchPath;
+            this.relLaunchPath = relLaunchPath;
 
             if(Name == "Photoshop 2023")
             {
@@ -42,6 +42,12 @@ namespace ReFreeAdobe.src.model
         public string Name { get => name; set => name = value; }
         public string Desc { get => desc; set => desc = value; }
         public string Detail { get => detail; set => detail = value; }
-        public string LaunchPath { get => launchPath; set => launchPath = value; }
+        public string LaunchPath
+        {
+            get
+            {
+                return AdobePatchUtil.AdobeInstallPath + "/" + relLaunchPath;
+            }
+        }
     }
 }

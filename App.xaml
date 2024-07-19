@@ -1,9 +1,9 @@
 ﻿<Application x:Class="FreeAdobe.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:FreeAdobe"
+             xmlns:local="clr-namespace:FreeAdobe" xmlns:properties="clr-namespace:ReFreeAdobe.Properties"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <properties:Settings x:Key="Settings"/>
     </Application.Resources>
 </Application>
