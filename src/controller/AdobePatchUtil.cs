@@ -41,6 +41,7 @@ namespace ReFreeAdobe.src
             if (patchInfos == null)
             {
                 patchInfos = new List<PatchInfo>();
+                initPatchInfo("2025");
                 initPatchInfo("2024");
                 initPatchInfo("2023");
                 initPatchInfo("2022");
@@ -55,6 +56,7 @@ namespace ReFreeAdobe.src
         public static List<PatchInfo> loadProductPatchInfo(AdobeProduct productName,string version) {
             if (patchInfos == null) {
                 patchInfos = new List<PatchInfo>();
+                initPatchInfo("2025");
                 initPatchInfo("2024");
                 initPatchInfo("2023");
                 initPatchInfo("2022");
